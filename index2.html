@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>localeCompare Demo</title>
+</head>
+<body>
+  <h2>String Comparison Demo</h2>
+
+  <p>Comparing: <strong>"éclair"</strong> vs <strong>"eclair"</strong></p>
+
+  <p><strong>Normal Comparison:</strong></p>
+  <pre id="normal"></pre>
+
+  <p><strong>localeCompare() without options:</strong></p>
+  <pre id="locale1"></pre>
+
+  <p><strong>localeCompare() with French locale, base sensitivity:</strong></p>
+  <pre id="locale2"></pre>
+
+  <script>
+    const str1 = "éclair";
+    const str2 = "eclair";
+
+    // Normal comparison
+    let normal = str1 > str2 ? "éclair > eclair" :
+                 str1 < str2 ? "éclair < eclair" : "éclair == eclair";
+
+    // localeCompare (default)
+    let result1 = str1.localeCompare(str2);
+
+    // localeCompare with French locale and sensitivity: 'base'
+    let result2 = str1.localeCompare(str2, 'fr', { sensitivity: 'base' });
+
+    // Display
+    document.getElementById("normal").textContent = normal;
+    document.getElementById("locale1").textContent = `éclair.localeCompare(eclair): ${result1}`;
+    document.getElementById("locale2").textContent = `éclair.localeCompare(eclair, 'fr', { sensitivity: 'base' }): ${result2}`;
+  </script>
+</body>
+</html>
