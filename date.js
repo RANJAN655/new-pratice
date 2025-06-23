@@ -24,6 +24,40 @@ hours = hours%12 || 12
 
 let formatted =`${date}-${month}-${year}, ${hours}.${minutes}${hour}`
 console.log(formatted);
+console.log(formatted.toLocaleLowerCase());
+
+
+
+
+/** @type {Intl.DateTimeFormatOptions} */
+const options = {
+  weekday: 'long',
+  year: 'numeric',
+  month: 'long',
+  day: '2-digit',
+  hour: '2-digit',
+  minute: '2-digit',
+  hour12: true
+};
+
+console.log(ranjan.toLocaleString('default', options));
+
+
+
+console.log(ranjan.toLocaleString('default', {
+  weekday: 'narrow',
+  year:'2-digit',
+  month:'narrow',
+  day: '2-digit',
+  hour: '2-digit',
+  minute: '2-digit',
+  hour12: true
+}));
+
+
+
+
+
 
 
 
