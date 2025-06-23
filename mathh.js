@@ -53,6 +53,25 @@ console.log(ex.toExponential());
 
 
 
+console.log("--------math method -----------");
+// const math1 = 10
+// const math2 = 20.756
+
+
+// // console.log(Math.abs(math1));
+// console.log(Math.max(math1,math2));
+// console.log(Math.round(math2));
+const math1 = 10
+const math2 = 20
+ for(let i=0; i<20; i++){
+     console.log(Math.floor(Math.random()*((math2-math1)+1)) +math1)
+ }
+
+
+
+
+
+
 
 
 
