@@ -67,21 +67,4 @@ const math2 = 20
      console.log(Math.floor(Math.random()*((math2-math1)+1)) +math1)
  }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
