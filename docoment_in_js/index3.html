@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="parent">
+        <!-- <li>rakes</li> -->
+
+        
+    </ul>
+    
+</body>
+<script>
+
+                    //  <-- create a new element -->
+
+
+    // function add (language){
+    //     const li = document.createElement('li')
+
+    //     li.innerText = `${language}`
+    //     document.querySelector('.parent').appendChild(li)
+
+
+    // }
+    // add('python')
+    // add('java')
+    // add('javascript')
+    // add('cpp')
+    
+
+                //   optimise function to create element
+
+
+   function optimise(name){
+    const li = document.createElement('li')
+    li.appendChild(document.createTextNode(name))
+    // li.innerText = name
+    // li.innerHTML = `${name}`
+    const rk = document.querySelector('.parent')
+    rk.appendChild(li)
+
+   }             
+
+   optimise('java')
+   optimise('python')
+   optimise('me')
+   optimise('python')
+
+                 
+
+        //   <-- modify the element -->
+
+
+const newli = document.querySelector("li:nth-child(2)")        
+// console.log(newli);
+const li = document.createElement('li')
+li.appendChild(document.createTextNode('sashi kanta nayak'))
+newli.replaceWith(li)
+
+
+                // edit the outer-element
+
+                
+
+const out1 = document.querySelector('li:first-child')  
+// console.log(out1);
+out1.innerHTML = '<li> outerhtml </li>'
+
+        // remove the element
+
+const out2 = document.querySelector('li:nth-child(4)')        
+console.log(out2);
+
+out2.remove()
+
+              
+
+
+
+
+
+         
+
+
+
+</script>
+</html>

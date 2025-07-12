@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrapper{
+            height: 100vh;
+            width: 100vw;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <button id="start"> start </button>
+        <button id="stop"> stop </button>
+    </div>
+    <script>
+
+        const wrapper = document.querySelector('#wrapper')
+        const start = document.querySelector('#start')
+        const stop = document.querySelector('#stop')
+
+
+
+        const allColors = [
+  "red", "green", "blue", "yellow", "orange", "purple", "pink", "brown",
+  "black", "white", "gray", "cyan", "magenta", "lime", "maroon", "navy",
+  "olive", "teal", "aqua", "silver", "gold", "beige", "coral", "indigo",
+  "ivory", "khaki", "lavender", "mint", "peach", "plum", "salmon", "tan",
+  "turquoise", "violet"
+];
+
+         let rakes = null
+
+        let min = 0
+        let max = allColors.length
+        function ranjan(){
+            let rakes = Math.round(Math.random()*max+1)
+            wrapper.style.backgroundColor = allColors[rakes]
+            
+                
+        }
+        
+       
+         start.addEventListener('click', function( ){
+            if (rakes === null) {
+            rakes = setInterval(ranjan,2000)    
+            }
+        })
+
+
+        stop.addEventListener('click', function(){
+            clearInterval(rakes)
+            rakes = null;
+        })
+
+
+
+    //     rames.addEventListener('click', function (e) {
+    //         if (e.target.tagName === 'H2') {
+    //             let rk = e.target
+    //             rk.remove()  
+    //             clearInterval(rakes)
+    //             rakes = null;
+    //         }
+    // });
+
+        
+    </script>
+</body>
+</html>

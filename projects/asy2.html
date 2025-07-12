@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrapper">
+        <button id="start"> start </button>
+        <button id="stop"> stop </button>
+    </div>
+    <script>
+
+        const wrapper = document.querySelector('#wrapper')
+        const start = document.querySelector('#start')
+        const stop = document.querySelector('#stop')
+
+        let max = 900;
+        let min = 100;
+
+
+         let rakes = null
+        const rames = document.createElement('div')
+        wrapper.appendChild(rames)
+        
+        function ranjan (){
+            
+                let rk = Math.round(Math.random()*(max-min)+min)
+            rames.innerHTML = `<h2 id="das"> </h2>`
+            let kunu = document.querySelector('#das')
+
+            kunu.innerHTML = `your current data speed is-  ${rk} kb`
+        }
+        
+       
+         start.addEventListener('click', function( ){
+            if (rakes === null) {
+            rakes = setInterval(ranjan,2000)    
+            }
+        })
+
+
+        stop.addEventListener('click', function(){
+            clearInterval(rakes)
+            rakes = null;
+        })
+
+
+
+        rames.addEventListener('click', function (e) {
+            if (e.target.tagName === 'H2') {
+                let rk = e.target
+                rk.remove()  
+                clearInterval(rakes)
+                rakes = null;
+            }
+    });
+
+        
+    </script>
+</body>
+</html>

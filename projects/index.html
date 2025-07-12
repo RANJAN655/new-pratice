@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color:#212121;
+            color: white;
+
+        }
+        #results{
+            height: 20px;
+            width: 100px;
+            background-color: transparent;
+            margin-top: 20px;
+            border: 4px solid gray;
+            border-radius: 10px;
+            text-align: center;
+            /* word-wrap: break-word;
+            overflow-wrap: break-word; */
+
+
+            /* overflow: auto; */
+
+
+            /* overflow: hidden;
+            text-overflow: ellipsis;
+            white-space:nowrap; */
+
+
+            overflow: hidden;
+            word-wrap: break-word;
+            
+            
+
+
+
+            color: red;
+            
+        }
+    </style>
+</head>
+<body>
+    <form id="from">
+        <p><label> hight in centimiter: </label> <input type="text" id="height"></p>
+        <p><label> weight in kg : </label> <input type="text" id="weight"></p>
+        <button>calculate</button>
+
+
+        <div id="results"> </div>
+        <div id="weight-guide">
+            <h1>BMI weight guide </h1>
+            <p>under weight = lessthen 18.6</p>
+            <p>Normal range = l8.9 to 24.9</p>
+            <p>over weight = graterthen 24.9</p>
+        </div>
+
+    </form>
+    <script>
+        const form = document.querySelector('form')
+        form.addEventListener('submit', function (e){
+            e.preventDefault()
+            const height1 = document.querySelector('#height').value;
+            console.log(height1);
+            
+            const weight1 = document.querySelector('#weight').value;
+            console.log(weight1);
+            
+            const height = parseInt(document.querySelector('#height').value);
+            // console.log(height);
+            
+            const weight = parseInt(document.querySelector('#weight').value);
+            const results = document.querySelector('#results')
+            if ( height === '' || height < 0 || isNaN(height)) {
+                results.innerHTML = `error ok  : ${height1}`
+                
+            }
+
+             else if( weight === '' || weight < 0 || isNaN(weight)) {
+                results.innerHTML = `erro : ${weight1}`
+                
+            } else {
+    const bmi = (weight / ((height * height) / 10000)).toFixed(2);
+    //show the result
+    results.innerHTML = `<span>${bmi}</span>`;
+  }
+
+
+        })
+
+    </script>
+    
+</body>
+</html>

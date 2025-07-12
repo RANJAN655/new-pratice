@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper{
+            margin-top: 50px;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .img1{
+            height: 100px;
+            width: 100px;
+
+        }
+    </style>
+</head>
+<body>
+    <ul class="wrapper">
+        <li>
+    <img  class="im1" id="sarasati"  src="image/13 Powerful Saraswati Mantra For Education and Knowledge.jpg" height="100px" width="100px">
+
+
+        </li>
+        <li>
+    <img class="im1"  id="image2" src="image/xc833azb.png" alt="" height="100px" width="100px">
+
+        </li>
+        <li>
+    <img class="im1" id="image3" src="image/box1_image.jpg" alt="" height="100px" width="100px">
+
+        </li>
+        <li>
+    <img class="im1" id="image4" src="image/box2_image.jpg" alt="" height="100px" width="100px">
+
+        </li>
+        <li>
+    <img class="im1" id="image5" src="image/box3_image.jpg" alt="" height="100px" width="100px">
+
+        </li>
+        <li>
+    <img class="im1" id="image6" src="image/box4_image.jpg" alt="" height="100px" width="100px">
+
+        </li>
+        <li>
+    <img class="im1" id="image6" src="image/box4_image.jpg" alt="" height="100px" width="100px">
+
+        </li>
+        <li>
+    <a id="link"  style="color: greenyellow;" href="https://tailwindcss.com/docs/installation/using-vite"> click tailwindcss link </a>
+
+
+        </li>
+    </ul>
+    
+    <script>
+
+
+                                //    event propagation
+
+
+
+
+
+        // document.querySelector('#image2').onclick = function(){
+        //     alert('press ok')
+        // }
+        document.querySelector('.wrapper').addEventListener('click', function(e){
+
+            console.log('press the ul');
+            
+            // e.stopPropagation();
+            // e.preventDefault()
+        },false)
+
+
+        document.querySelector('#sarasati').addEventListener('click', function(e){
+
+            console.log('click on image');
+            
+            // e.preventDefault()
+            // e.stopPropagation()
+        },false)
+
+
+        document.querySelector('#link').addEventListener('click',function(e){
+            // alert('rames')
+            console.log('click work');
+            
+            e.preventDefault();
+            // e.stopPropagation();
+              
+        },false)
+
+
+        //    click and image disapire project
+
+        document.querySelector('.wrapper').addEventListener('click',function(e){
+            if (e.target.tagName === 'IMG' || e.target.tagName === 'A' ) {
+                console.log(e.target.id);
+                
+                 let rk = e.target.parentNode
+                 rk.remove()   
+            }
+            // rk.parentNode.removeChild(e.target.parentNode)
+        })
+
+    </script>
+
+    </div>
+    </body>

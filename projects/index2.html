@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            /* box-sizing: border-box; */
+            /* padding: 0%; */
+            margin: 0%;
+        }
+        
+        #ranjan{
+            height: 100vh;
+            width: 100vw;
+            background-color: aqua;
+            overflow: hidden;
+            display: flex;
+            flex-direction:column;
+            justify-content: center;
+            align-items: center;
+
+        }
+        #clock{
+            /* margin-top: 50px; */
+            height: 20px;
+            width: 100px;
+            background-color: #fff;
+            border-radius: 20px;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="ranjan">
+        <div id="banner"> <span>local time</span></div>
+    </br>
+        <div id="clock"></div>
+    </div>
+    <script>
+        const clock = document.querySelector('#clock')
+        setInterval(function(){
+            const date = new Date();
+            // console.log(date.toLocaleTimeString());
+            clock.innerHTML = date.toLocaleTimeString()
+            
+        },1000)
+    </script>
+</body>
+</html>

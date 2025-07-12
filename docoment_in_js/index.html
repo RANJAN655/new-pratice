@@ -8,47 +8,45 @@
 <body style="background-color: #212121; color: white;">
     <div class="parent">
         <!-- ranajnaf -->
-        <div class="body">sunday</div>
-        <div class="body">monday</div>
-        <div class="body">tuesday</div>
-        <div class="body">wednesday</div>
-        <div class="body">thuresday</div>
+        <div class="body1">sunday</div>
+        <div class="body2">monday</div>
+        <div class="body3">tuesday</div>
+        <div class="body4">wednesday</div>
+        <div class="body5">thuresday</div>
     </div>
     <script>
           const parents = document.querySelector('.parent')
-        // console.log(parents);
-        // console.log(parents.children);
-        // console.log(parents.children[1].innerText);
+        console.log(parents);
+        console.log(parents.children);
+        const arr = Array.from(parents.children)
+        console.log(arr);
+        
+        console.log(parents.children[1].innerText);
         // for (let i = 0; i < parents.children.length ; i++) {
         //     console.log(parents.children[i].innerText)
-        // parents.children[i].style.color = 'green';
+        // parents.children[i].style.backgroundColor = 'green';
 
+        // parents.children[i].style.color = 'yellow';
+        // // parents.children[i].style.margine = '40px';
 
         // }
-        // // parents.children[1].style.color = 'green'
-        // // parents.children[i].style.backgroundcolor = 'green'
-        // console.log(parents.firstElementChild.innerText);
-        // console.log(parents.lastElementChild.innerText);
+
+
+        parents.children[1].style.color = 'green'
+        parents.children[4].style.backgroundColor = 'green'
+        console.log(parents.firstElementChild.innerText);
+        console.log(parents.lastElementChild.innerText);
         
         
 
 
-    const kunu = document.querySelector('.body')
-    console.log(kunu);
-    console.log(kunu.parentElement);
-    console.log(kunu.nextElementSibling);
-    console.log(kunu.nextElementSibling)
-    console.log("NODE : ", parents.childNodes);
+    // const kunu = document.querySelector('.body1')
+    // console.log(kunu.innerText);
+    // console.log(kunu.parentElement);
+    // console.log(kunu.nextElementSibling);
+    // console.log(kunu.nextElementSibling)
+    // console.log("NODE : ", parents.childNodes);
 
-
-
-    
-    
-
-
-        
-
-        
 
     </script>
 </body>

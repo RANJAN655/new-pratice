@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #kunu{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    
+</head>
+<body style="background-color:black; color:antiquewhite;">
+    <div id="rk">
+
+        <div id="kunu">enter the key board any lettet i can tell you 
+                every thing ablut you
+            
+            <div id="wrapper"></div>
+            </div>
+        </div>
+    <script>
+        const wrapper = document.querySelector('#wrapper')
+        window.addEventListener('keydown', (e)=>{
+            wrapper.innerHTML = 
+            ` 
+            <table>
+            <tr>
+                <th>key</th>
+                <th>key code</th>
+                <th>code</th>
+            </tr>
+            <tr>
+                <td>${e.key === ' '? 'space': e.key}</td>
+                <td>${e.keyCode}</td>
+                <td>${e.code}</td>
+            </tr>
+        </table>
+
+
+            `
+
+        })
+        
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #A6F6AF;
+        }
+        #wrapper{
+            height: 300px;
+            width: 600px;
+            
+            background-image: url("1600w-QWyrCrYYNMI.webp");
+            background-size: cover;        
+            background-repeat: no-repeat; 
+            background-position:center;    
+            overflow: hidden;
+            color: blue;
+             }
+             #user{
+                margin-top: 20px;
+                background-color: cadetblue;
+             }
+             #head{
+                text-align: center;
+             }
+
+    </style>
+</head>
+<body style="color: white;">
+    <div id ="wrapper">
+        <h1 id="head">Github Card </h1>
+        <div id="image"><img src="" alt=""></div>
+        <h4 id="name">ranjan kumar</h4>
+    </div>
+    <button id="user">about the user</button>
+    <script>
+        const idName = document.querySelector('#name')
+        const image = document.querySelector('#image')
+        const requesturl = 'https://api.github.com/users/RANJAN655'
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET',requesturl)
+        xhr.onreadystatechange = function(){
+            
+            console.log(xhr.readyState);
+
+            if (xhr.readyState === 4) {
+                const rk = JSON.parse(this.responseText)
+                console.log(typeof rk); 
+                idName.innerHTML = rk.login
+                image.innerHTML = '<img src="${rk.img}" alt="">'
+
+            }
+        }
+        
+        xhr.send()
+        console.log(xhr.readyState);
+
+
+    </script>
+    
+</body>
+</html>

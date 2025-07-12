@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* *{
+            margin: auto;
+            padding: 0%;
+            box-sizing: border-box;
+        } */
+        .box5{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: antiquewhite;
+    
+        
+        }
+        .innerbox{
+            height: 400px;
+            width: 400px;
+            background-color: aqua;
+            border: 2px solid black;
+            border-radius: 10px;
+             position: relative;
+        }
+        .dot{
+            width: 2px;
+      height: 2px;
+      background-color: red;
+      /* border-radius: 50%; */
+      scroll-behavior: smooth;
+      position: absolute;
+      transform: translate(-50%, -50%);
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box5">
+        <div class="innerbox"></div>
+        <div class="coordinate">x diracton and y diraction</div>
+    </div>
+    <script>
+        const coordinate = document.querySelector('.coordinate')
+        const box = document.querySelector('.innerbox')
+        box.addEventListener('mousemove',function(e){
+            const rect = box.getBoundingClientRect()
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            coordinate.innerText = `x : ${x} and y: ${y}`
+
+
+
+            const dot = document.createElement('div')
+            dot.className ='dot'
+            dot.style.left = `${x}px`
+            dot.style.top = `${y}px`
+            box.appendChild(dot)
+
+
+
+
+        });
+    </script>
+</body>
+</html>

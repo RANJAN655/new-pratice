@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #box {
+      width: 300px;
+      height: 150px;
+      background-color: orange;
+      margin: 50px;
+      position: relative;
+      transition: background-color 0.3s;
+      cursor: pointer;
+    }
+
+    #coords {
+      position: absolute;
+      color: white;
+      font-weight: bold;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+<div id="box">
+  <div id="coords"></div>
+</div>
+
+<script>
+  const box = document.getElementById("box");
+  const coords = document.getElementById("coords");
+
+  let hoverActive = true; // starts as active
+
+  // Toggle hover on click
+  box.addEventListener("click", () => {
+    hoverActive = !hoverActive;
+    if (!hoverActive) {
+      coords.textContent = "";
+      box.style.backgroundColor = "orange"; // reset color
+    }
+  });
+
+  // Mouse enters
+  box.addEventListener("mouseenter", () => {
+    if (hoverActive) {
+      box.style.backgroundColor = "green";
+    }
+  });
+
+  // Mouse leaves
+  box.addEventListener("mouseleave", () => {
+    if (hoverActive) {
+      box.style.backgroundColor = "orange";
+      coords.textContent = "";
+    }
+  });
+
+  // Mouse moves
+  box.addEventListener("mousemove", (e) => {
+    if (!hoverActive) return;
+
+    const rect = box.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    coords.textContent = `x: ${Math.floor(x)}, y: ${Math.floor(y)}`;
+    coords.style.left = x + "px";
+    coords.style.top = y + "px";
+  });
+</script>
+
+</body>
+</html>

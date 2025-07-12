@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrapper">
+        <pre> click start to change the color -- 
+ click stop if you like the color -- 
+        </pre>
+        <button id="start">start</button>
+        <button id="stop">stop</button>
+        <p> work parperly </p>
+    </div>
+    
+    <script>
+        const wrapper = document.querySelector('#wrapper')
+        const start = document.querySelector('#start')
+        const stop = document.querySelector('#stop')
+        let randomId = null;
+
+        function randomColor (){
+            let rk = '0123456789ABCDEF'
+            color = '#';
+            
+            for(let i=0 ; i<6 ; i++ ){
+                color += rk[Math.floor(Math.random()*16)]
+
+            }
+            return color
+        }
+
+
+        start.addEventListener('click',function(){
+            if(!randomId){
+                randomId = setInterval(ranjan,1000)
+
+            }
+            function ranjan(){
+                document.body.style.backgroundColor = randomColor()
+
+            }
+
+        })
+
+
+
+
+        
+
+        stop.addEventListener('click', function(){
+            clearInterval(randomId)
+            console.log(randomId);
+            
+            randomId = null
+
+        })
+        wrapper.addEventListener('click', function(e){
+            console.log(e.target.tagName);
+            
+            if(e.target.tagName === 'P'){
+                let rk =  e.target
+                 console.log(e.target.tagName);
+                rk.remove()
+
+            }
+
+                
+        })
+
+
+    </script>
+    
+</body>
+</html>
