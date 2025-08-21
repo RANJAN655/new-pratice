@@ -1,2 +1,4 @@
 ranjan kumar nayak
 sashi kanta nayak
+it is prove that i push i code to different repo but before i have to rebase it
+by git pull rakes main --rebase
